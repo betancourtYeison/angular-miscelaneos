@@ -1,0 +1,52 @@
+<div class="alert" [ngClass]="alertClass" role="alert">
+  A simple primary alert—check it out!
+</div>
+<button
+  type="button"
+  class="btn btn-info mr-3"
+  (click)="alertClass = 'alert-info'"
+>
+  Info
+</button>
+<button
+  type="button"
+  class="btn btn-success"
+  (click)="alertClass = 'alert-success'"
+>
+  Success
+</button>
+<br /><br />
+<h3
+  [ngClass]="{
+    'text-danger': propertiesClass.danger,
+    'text-info': !propertiesClass.danger
+  }"
+>
+  Hello World!!!
+</h3>
+<button
+  type="button"
+  class="btn"
+  (click)="propertiesClass.danger = !propertiesClass.danger"
+  [ngClass]="{
+    'btn-danger': propertiesClass.danger,
+    'btn-info': !propertiesClass.danger
+  }"
+>
+  Change Color
+</button>
+<br /><br />
+<h3>Async task</h3>
+<button
+  type="button"
+  class="btn btn-info"
+  (click)="process()"
+  [disabled]="loadingClass"
+>
+  <i
+    [ngClass]="{ 'fa-save': !loadingClass, 'fa-sync fa-spin': loadingClass }"
+    class="fa"
+  ></i>
+  <span *ngIf="!loadingClass"> Save</span>
+  <span *ngIf="loadingClass"> Loading...</span>
+</button>
