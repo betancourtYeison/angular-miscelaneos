@@ -18,8 +18,8 @@
 <br /><br />
 <h3
   [ngClass]="{
-    'text-danger': propertiesClass.danger,
-    'text-info': !propertiesClass.danger
+    'text-danger': propertiesClass['danger'],
+    'text-info': !propertiesClass['danger']
   }"
 >
   Hello World!!!
@@ -27,10 +27,10 @@
 <button
   type="button"
   class="btn"
-  (click)="propertiesClass.danger = !propertiesClass.danger"
+  (click)="propertiesClass['danger'] = !propertiesClass['danger']"
   [ngClass]="{
-    'btn-danger': propertiesClass.danger,
-    'btn-info': !propertiesClass.danger
+    'btn-danger': propertiesClass['danger'],
+    'btn-info': !propertiesClass['danger']
   }"
 >
   Change Color
